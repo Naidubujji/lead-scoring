@@ -1,0 +1,23 @@
+# Access input data from the previous step
+company_size = input_data.get('company_size')
+budget = input_data.get('budget')
+urgency = input_data.get('urgency')
+
+# Define lead scoring criteria
+score = 0
+
+if company_size == '1-50 employees':
+    score += 10
+elif company_size == '51-200 employees':
+    score += 20
+# Add more conditions...
+
+if budget == 'More than $100,000':
+    score += 30
+# Add more conditions...
+
+if urgency == 'Immediate (within 1 month)':
+    score += 40
+
+# Output lead score
+return {"lead_score": score}
